@@ -18,7 +18,7 @@ int main()
         return 0;
     }
 
-    printf("Your Equation: %s", equation);
+    printf("Your Equation: %s\n", equation);
     char *p = equation;
     number[n++] = strtol(p, &p, 10);
 
@@ -29,7 +29,7 @@ int main()
         number[n++] = strtol(p, &p, 10);
     }
 
-    for (int i = 0; i < o; i++)
+    for (int i = 0; i < o; i++) // คูณ (*) หาร (/) หารลงตัว (%)
     {
         if (operators[i] == '*' || operators[i] == '/' || operators[i] == '%')
         {
@@ -42,8 +42,27 @@ int main()
                 result = number[i] % number[i + 1];
 
             number[i] = result;
+            for (int j = i + 1; j < n - 1; j++)
+                number[j] = number[j + 1];
+            for (int j = i; j < o - 1; j++)
+                operators[j] = operators[j + 1];
+
+            n--;
+            o--;
+            i--;
         }
     }
+
+    int answer = number[0];
+    for (int i = 0; i < o; i++)
+    {
+        if (operators[i] == '+')
+            answer += number[i + 1];
+        else
+            answer -= number[i + 1];
+    }
+
+    printf("Result = %d\n", answer);
 
     return 0;
 }

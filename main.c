@@ -18,7 +18,7 @@ int main()
         return 0;
     }
 
-    printf("Your Equation: %s", equation);
+    printf("Your Equation: %s\n", equation);
     char *p = equation;
     number[n++] = strtol(p, &p, 10);
 

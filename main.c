@@ -18,6 +18,15 @@ int main()
     }
 
     printf("Your Equation: %s", equation);
+    char *p = equation;
+    number[n++] = strtol(p, &p, 10);
+
+    while (*p)
+    {
+        operators[o++] = *p;
+        p++;
+        number[n++] = strtol(p, &p, 10);
+    }
 
     for (int i = 0; i < o; i++)
     {
@@ -33,15 +42,6 @@ int main()
 
             number[i] = result;
         }
-    }
-    char *p = equation;
-    number[n++] = strtol(p, &p, 10);
-
-    while (*p)
-    {
-        operators[o++] = *p;
-        p++;
-        number[n++] = strtol(p, &p, 10);
     }
 
     return 0;

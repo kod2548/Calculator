@@ -52,6 +52,13 @@ int main()
             i--;
         }
     }
-
+    int answer = number[0];
+    for (int i = 0; i < o; i++)
+    {   
+        if (operators[i] == '+')
+            answer += number[i + 1];
+        else
+            answer -= number[i + 1];
+    }
     return 0;
 }

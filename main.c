@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
@@ -9,6 +10,13 @@ int main()
     printf("Enter Your Equation: ");
     scanf("%s", equation);
 
+    if (strspn(equation, "0123456789+-*/%") != strlen(equation))
+    {
+        printf("Error: Invalid character\n");
+        return 0;
+    }
+
     printf("Your Equation: %s", equation);
+
     return 0;
 }

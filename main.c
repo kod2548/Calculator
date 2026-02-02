@@ -53,7 +53,7 @@ int main()
         }
     }
 
-    int answer = number[0];
+    int answer = number[0]; // บวก(+) ลบ(-)
     for (int i = 0; i < o; i++)
     {
         if (operators[i] == '+')

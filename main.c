@@ -18,7 +18,6 @@ int main()
     }
 
     printf("Your Equation: %s", equation);
-
     char *p = equation;
     number[n++] = strtol(p, &p, 10);
 
@@ -29,5 +28,22 @@ int main()
         number[n++] = strtol(p, &p, 10);
     }
     
+
+    for (int i = 0; i < o; i++)
+    {
+        if (operators[i] == '*' || operators[i] == '/' || operators[i] == '%')
+        {
+            int result;
+            if (operators[i] == '*')
+                result = number[i] * number[i + 1];
+            else if (operators[i] == '/')
+                result = number[i] / number[i + 1];
+            else
+                result = number[i] % number[i + 1];
+
+            number[i] = result;
+        }
+    }
+
     return 0;
 }

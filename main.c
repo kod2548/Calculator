@@ -53,7 +53,7 @@ int main()
         }
     }
 
-    int answer = number[0]; // บวก(+) ลบ(-)
+    int answer = number[0]; // บวก(+) ลบ (-)
     for (int i = 0; i < o; i++)
     {
         if (operators[i] == '+')
@@ -62,7 +62,7 @@ int main()
             answer -= number[i + 1];
     }
 
-    printf("Result = %d\n", answer);
+    printf("Result = %d\n", answer); // แสดงคำตอบ
 
     return 0;
 }

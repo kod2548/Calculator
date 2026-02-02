@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -27,7 +28,6 @@ int main()
         p++;
         number[n++] = strtol(p, &p, 10);
     }
-    
 
     for (int i = 0; i < o; i++)
     {

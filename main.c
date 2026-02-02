@@ -28,6 +28,6 @@ int main()
         p++;
         number[n++] = strtol(p, &p, 10);
     }
-
+    
     return 0;
 }

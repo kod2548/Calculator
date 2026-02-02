@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
@@ -9,6 +10,29 @@ int main()
     printf("Enter Your Equation: ");
     scanf("%s", equation);
 
+    if (strspn(equation, "0123456789+-*/%") != strlen(equation))
+    {
+        printf("Error: Invalid character\n");
+        return 0;
+    }
+
     printf("Your Equation: %s", equation);
+
+    for (int i = 0; i < o; i++)
+    {
+        if (operators[i] == '*' || operators[i] == '/' || operators[i] == '%')
+        {
+            int result;
+            if (operators[i] == '*')
+                result = number[i] * number[i + 1];
+            else if (operators[i] == '/')
+                result = number[i] / number[i + 1];
+            else
+                result = number[i] % number[i + 1];
+
+            number[i] = result;
+        }
+    }
+
     return 0;
 }

@@ -6,13 +6,13 @@ int main()
 {
     char equation[100];
     char operators[100];
-    int number[100];
+    float number[100];
     int n = 0, o = 0;
 
     printf("Enter Your Equation: ");
     scanf("%s", equation);
 
-    if (strspn(equation, "0123456789+-*/%") != strlen(equation))
+    if (strspn(equation, "0123456789.+-*/%") != strlen(equation))
     {
         printf("Error: Invalid character\n");
         return 0;
@@ -20,26 +20,26 @@ int main()
 
     printf("Your Equation: %s\n", equation);
     char *p = equation;
-    number[n++] = strtol(p, &p, 10);
+    number[n++] = strtof(p, &p);
 
     while (*p)
     {
         operators[o++] = *p;
         p++;
-        number[n++] = strtol(p, &p, 10);
+        number[n++] = strtof(p, &p);
     }
 
     for (int i = 0; i < o; i++) // คูณ (*) หาร (/) หารลงตัว (%)
     {
         if (operators[i] == '*' || operators[i] == '/' || operators[i] == '%')
         {
-            int result;
+            float result;
             if (operators[i] == '*')
                 result = number[i] * number[i + 1];
             else if (operators[i] == '/')
                 result = number[i] / number[i + 1];
             else
-                result = number[i] % number[i + 1];
+                result = (int)number[i] % (int)number[i + 1];
 
             number[i] = result;
             for (int j = i + 1; j < n - 1; j++)
@@ -53,7 +53,7 @@ int main()
         }
     }
 
-    int answer = number[0]; // บวก(+) ลบ (-)
+    float answer = number[0];
     for (int i = 0; i < o; i++)
     {
         if (operators[i] == '+')
@@ -62,7 +62,7 @@ int main()
             answer -= number[i + 1];
     }
 
-    printf("Result = %d\n", answer); // แสดงคำตอบ
+    printf("Result = %.2f\n", answer);
 
     return 0;
 }

@@ -96,3 +96,5 @@ int main()
 // TESTTTT BRO
 
 // fdjshjhijshfjodhslkjfhksj
+
+// แตกกิ่งing

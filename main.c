@@ -97,3 +97,5 @@ int main()
 
 // fdjshjhijshfjodhslkjfhksj
 // สวัสดีครับผมชื่อจอร์จ
+
+// แตกกิ่งing

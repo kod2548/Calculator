@@ -11,15 +11,19 @@ int main()
 
     printf("Enter Your Equation: "); // รับสมการจากผู้ใช้
     scanf("%s", equation);           // รับสมการเป็นสตริง
+    printf("Enter Your Equation: "); // รับสมการจากผู้ใช้
+    scanf("%s", equation);           // รับสมการเป็นสตริง
 
     if (strspn(equation, "0123456789.+-*/%") != strlen(equation)) // ตรวจสอบตัวอักษรที่ไม่ถูกต้อง
     {
         printf("Error: Invalid character\n"); // แจ้งข้อผิดพลาด
         return 0;                             // ออกจากโปรแกรม
+        return 0;                             // ออกจากโปรแกรม
     }
 
     printf("Your Equation: %s\n", equation); // แสดงสมการที่ผู้ใช้ป้อน
 
+    char *p = equation;        // ตัวชี้ไปยังตำแหน่งปัจจุบันในสมการ
     char *p = equation;        // ตัวชี้ไปยังตำแหน่งปัจจุบันในสมการ
     number[n] = strtof(p, &p); // แปลงสตริงเป็นตัวเลข
     n++;
@@ -63,6 +67,7 @@ int main()
                 operators[j] = operators[j + 1];
             }
 
+            n--; // ออก loop
             n--; // ออก loop
             o--;
             i--;

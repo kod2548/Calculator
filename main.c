@@ -48,7 +48,7 @@ int main()
             }
             else
             {
-                result = (int)number[i] % (int)number[i + 1]; // %
+                result = (int)number[i] % (int)number[i + 1]; // หารลงตัว (%)
             }
 
             number[i] = result;

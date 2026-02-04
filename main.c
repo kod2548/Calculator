@@ -12,13 +12,14 @@ int main()
     printf("Enter Your Equation: ");
     scanf("%s", equation);
 
-        if (strspn(equation, "0123456789.+-*/%") != strlen(equation))
-        {
-            printf("Error: Invalid character\n");
-            return 0;
-        }
+    if (strspn(equation, "0123456789.+-*/%") != strlen(equation))
+    {
+        printf("Error: Invalid character\n");
+        return 0;
+    }
 
     printf("Your Equation: %s\n", equation);
+
     char *p = equation;
     number[n] = strtof(p, &p);
     n++;
@@ -38,18 +39,29 @@ int main()
         {
             float result;
             if (operators[i] == '*')
+            {
                 result = number[i] * number[i + 1];
+            }
             else if (operators[i] == '/')
+            {
                 result = number[i] / number[i + 1];
+            }
             else
+            {
                 result = (int)number[i] % (int)number[i + 1];
-            result = (int)number[i] % (int)number[i + 1];
+            }
 
             number[i] = result;
+
             for (int j = i + 1; j < n - 1; j++)
+            {
                 number[j] = number[j + 1];
+            }
+
             for (int j = i; j < o - 1; j++)
+            {
                 operators[j] = operators[j + 1];
+            }
 
             n--;
             o--;
@@ -61,9 +73,13 @@ int main()
     for (int i = 0; i < o; i++)
     {
         if (operators[i] == '+')
+        {
             answer += number[i + 1];
+        }
         else
+        {
             answer -= number[i + 1];
+        }
     }
 
     printf("Result = %.2f\n", answer);

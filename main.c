@@ -38,17 +38,17 @@ int main()
         if (operators[i] == '*' || operators[i] == '/' || operators[i] == '%')
         {
             float result;
-            if (operators[i] == '*')
+            if (operators[i] == '*') // คูณ
             {
                 result = number[i] * number[i + 1];
             }
-            else if (operators[i] == '/')
+            else if (operators[i] == '/') // หาร
             {
                 result = number[i] / number[i + 1];
             }
             else
             {
-                result = (int)number[i] % (int)number[i + 1];
+                result = (int)number[i] % (int)number[i + 1]; // %
             }
 
             number[i] = result;
@@ -63,7 +63,7 @@ int main()
                 operators[j] = operators[j + 1];
             }
 
-            n--;
+            n--; //ออก loop
             o--;
             i--;
         }

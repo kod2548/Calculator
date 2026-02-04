@@ -82,7 +82,7 @@ int main()
         }
     }
 
-    printf("Result = %.2f\n", answer); // TESTING
+    printf("Result = %.2f\n", answer); // แตกกิ่ง
 
     return 0;
 }
